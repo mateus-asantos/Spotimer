@@ -1,4 +1,5 @@
 import React from 'react'
+import { urlLogin } from '../../config'
 
 const handleClick = () => {
     window.location.href = 'https://accounts.spotify.com/authorize?client_id=b622a56a0e12443a88d4b6e4a2c89d66&response_type=token&redirect_uri=https://spotimer.netlify.com&scope=playlist-read-private playlist-modify-private playlist-modify-public user-top-read user-read-recently-played user-library-read'

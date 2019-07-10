@@ -24,7 +24,7 @@ export const newPlaylist = async (playlistId, time) => {
         })
 
         playlist.push(closest)
-        console.log(playlist)
     })
+    console.log("playlist", playlist)
     return playlist;
 }

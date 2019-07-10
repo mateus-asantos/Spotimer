@@ -1,39 +1,28 @@
 
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 
-class TimeForm extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            timeInput: 10
-        }
-    }
+const TimeForm = (props) => {
+    const [TimeInput, setTimeInput] = useState(10)
 
-    handleTimeInputChange(event) {
-        this.setState({
-            timeInput: event.target.value
-        }, this.props.onTimeInputChange(event.target.value))
-    }
-    
-    render() {
-        return (
-            <div>
-                <h2>...write down the time</h2>
-                <div className="Pla_Inp_Chi">
-                    <input
-                        className="Tim_Inp"
-                        value={this.state.timeInput}
-                        onChange={(event) => this.handleTimeInputChange(event)}
-                        type="number"
-                    >
-                    </input>
-                    Min
+    useEffect(() => {
+        props.onTimeInputChange(TimeInput)
+    })
+
+    return(
+        <div>
+            <h2>now tell me the time</h2>
+            <div className="time_input_area">
+                <input
+                    className="time_input"
+                    value={TimeInput}
+                    onChange={(event)=>setTimeInput(event.target.value)}
+                    type="number"
+                >
+                </input>
+                Minutes
             </div>
-
-            </div>
-        )
-    }
+        </div>
+    )
 }
 
-
-export default TimeForm;
+export default TimeForm
